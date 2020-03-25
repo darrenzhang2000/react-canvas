@@ -1,12 +1,14 @@
-import React from 'react'
-import Drawing from './Drawing';
+import React from "react"
 
 function DrawingLine({ line }) {
-  const pathData = "M " +
-    line
-      .map(p => p.get('x') + ' ' + p.get('y'))
-      .join(" L ");
+    const pathData =
+        "M " +
+        line
+            .map(p => {
+                return `${p.get("x")} ${p.get("y")}`
+            })
+            .join(" L ")
 
-  return <path d={pathData} />;
+    return <path className="path" d={pathData} />
 }
 export default DrawingLine

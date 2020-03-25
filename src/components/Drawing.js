@@ -1,13 +1,14 @@
 import React from 'react'
+import DrawingLine from './DrawingLine'
 
 function Drawing({ lines }) {
-    return (
-      <svg>
-        {lines.map((line, index) => (
-          <DrawingLine key={index} line={line} />
-        ))}
-      </svg>
-    );
-  }
+  return (
+    <svg className="drawing">
+      {lines.map((line, index) => (
+        <DrawingLine key={index} line={line} />
+      ))}
+    </svg>
+  );
+}
   
   export default Drawing
