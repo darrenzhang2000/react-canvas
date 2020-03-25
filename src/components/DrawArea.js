@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import Immutable from "immutable"
 
 class DrawArea extends React.Component {
     constructor() {
@@ -64,6 +65,16 @@ class DrawArea extends React.Component {
                 )
             }
         })
+    }
+
+    componentDidMount() {
+        document.addEventListener("mouseup", this.handleMouseUp)
+    }
+    componentWillUnmount() {
+        document.removeEventListener("mouseup", this.handleMouseUp)
+    }
+    handleMouseUp() {
+        this.setState({ isDrawing: false })
     }
 
     render() {
